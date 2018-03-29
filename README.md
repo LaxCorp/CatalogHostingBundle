@@ -1,9 +1,9 @@
-Billing partner helper
+Catalog hosting helper
 =======================================================
 
 Install 
 -------
-composer require laxcorp/hosting-api-bundle
+composer require laxcorp/catalog-hosting-bundle
 
 Add in app/AppKernel.php
 ------------------------
@@ -18,7 +18,7 @@ $bundles = [
 And add in config.yaml
 
 ```yaml
-laxcorp_hosting_api:
+catalog_hosting:
     url: 'https://catalog.hosting.api'
     login: 'test'
     password: 'test'
