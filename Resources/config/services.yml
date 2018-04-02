@@ -23,4 +23,8 @@ services:
 
     LaxCorp\CatalogHostingBundle\Helper\CatalogCustomerHelper:
 
+    LaxCorp\CatalogHostingBundle\Helper\VersionHelper:
+
+    LaxCorp\CatalogHostingBundle\Helper\Test:
+
 

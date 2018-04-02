@@ -57,7 +57,6 @@ class CatalogCustomerHelper extends BaseHelper
         return $customer;
     }
 
-
     /**
      * @inheritdoc
      */
