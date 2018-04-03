@@ -16,7 +16,7 @@ trait ThemeTrait
      * @Serializer\SerializedName("theme")
      * @Serializer\Type("string")
      */
-    private $theme = 'default';
+    private $theme;
 
     /**
      * @inheritdoc

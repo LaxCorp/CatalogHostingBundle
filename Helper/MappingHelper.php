@@ -34,7 +34,13 @@ class MappingHelper
      */
     public function deserialize(string $json, string $type, string $format = 'json')
     {
-        return $this->serializer->deserialize($json, $type, $format);
+        try {
+            $result = $this->serializer->deserialize($json, $type, $format);
+        } catch (\Exception $e) {
+            $result = $e->getMessage() . '\n' . $json;
+        }
+
+        return $result;
     }
 
     /**
