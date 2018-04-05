@@ -22,4 +22,5 @@ catalog_hosting:
     url: 'https://catalog.hosting.api'
     login: 'test'
     password: 'test'
+    cname: 'catalog.ru'
 ```

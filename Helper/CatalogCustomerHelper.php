@@ -23,7 +23,7 @@ class CatalogCustomerHelper extends BaseHelper
      */
     public function getDefault()
     {
-        return new CatalogCustomer();
+        return new CatalogCustomer($this->restHelper->getBaseCname());
     }
 
     /**

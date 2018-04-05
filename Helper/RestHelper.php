@@ -38,15 +38,26 @@ class RestHelper
     private $logger;
 
     /**
+     * @var string
+     */
+    private $baseCname;
+
+    /**
      * @inheritdoc
      */
     public function __construct(
-        string $apiUrl, string $login, string $password, RestInterface $restClient, LoggerInterface $logger
+        string $apiUrl,
+        string $login,
+        string $password,
+        string $baseCname,
+        RestInterface $restClient,
+        LoggerInterface $logger
     ) {
         $this->restClient = $restClient;
         $this->apiUrl     = $apiUrl;
         $this->login      = $login;
         $this->password   = $password;
+        $this->baseCname  = $baseCname;
         $this->logger     = $logger;
     }
 
@@ -216,6 +227,14 @@ class RestHelper
         }
 
         return $resultContent;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBaseCname()
+    {
+        return $this->baseCname;
     }
 
     /**

@@ -26,7 +26,7 @@ class Configuration implements ConfigurationInterface
             ->scalarNode('url')->cannotBeEmpty()->end()
             ->scalarNode('login')->cannotBeEmpty()->end()
             ->scalarNode('password')->cannotBeEmpty()->end()
-            ->scalarNode('currency_code')->cannotBeEmpty()->end()
+            ->scalarNode('cname')->cannotBeEmpty()->end()
             ->end();
 
         return $treeBuilder;

@@ -16,4 +16,5 @@ class CatalogCustomer
     use Traits\BackUrlTrait;
     use Traits\ThemeTrait;
     use Traits\ConfigPathTrait;
+    use Traits\BaseCnameTrait;
 }
