@@ -30,7 +30,7 @@ class Test
     {
         $catalogHosting = $this->versionHelper->getVersion();
 
-        if($catalogHosting instanceof Version && $catalogHosting->getApi()){
+        if($catalogHosting instanceof Version && $catalogHosting->getRevision()){
             return true;
         }
 

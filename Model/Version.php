@@ -3,6 +3,7 @@
 namespace LaxCorp\CatalogHostingBundle\Model;
 
 use JMS\Serializer\Annotation as Serializer;
+use LaxCorp\CatalogHostingBundle\Util\ConvertUtil;
 
 /**
  * @inheritdoc
@@ -13,35 +14,69 @@ class Version
     /**
      * @var string
      *
-     * @Serializer\SerializedName("api")
+     * @Serializer\SerializedName("branch")
      * @Serializer\Type("string")
      */
-    private $api;
+    private $branch;
 
     /**
-     * @var string
+     * @var int
      *
-     * @Serializer\SerializedName("guayaquil")
-     * @Serializer\Type("string")
+     * @Serializer\SerializedName("revision")
+     * @Serializer\Type("integer")
      */
-    private $guayaquil;
+    private $revision;
+
+    /**
+     * @var \DateTime
+     *
+     * @Serializer\SerializedName("revisionAt")
+     * @Serializer\Type("integer")
+     * @Serializer\Accessor(getter="getRevisionAtAccessor",setter="setRevisionAtAccessor")
+     */
+    private $revisionAt;
+
+    /**
+     * @var \DateTime
+     *
+     * @Serializer\SerializedName("deployAt")
+     * @Serializer\Type("integer")
+     * @Serializer\Accessor(getter="getDeployAtAccessor",setter="setDeployAtAccessor")
+     */
+    private $deployAt;
 
     /**
      * @return string
      */
-    public function getApi()
+    public function getBranch()
     {
-        return $this->api;
+        return $this->branch;
     }
 
     /**
-     * @param string $api
-     *
-     * @return Version
+     * @inheritdoc
      */
-    public function setApi($api)
+    public function setBranch($branch)
     {
-        $this->api = $api;
+        $this->branch = $branch;
+
+        return $this;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getRevision()
+    {
+        return $this->revision;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setRevision($revision)
+    {
+        $this->revision = $revision;
 
         return $this;
     }
@@ -49,19 +84,73 @@ class Version
     /**
      * @return string
      */
-    public function getGuayaquil()
+    public function getRevisionAt()
     {
-        return $this->guayaquil;
+        return $this->revisionAt;
     }
 
     /**
-     * @param string $guayaquil
+     * @inheritdoc
+     */
+    public function getRevisionAtAccessor()
+    {
+        return ConvertUtil::dateLong($this->revisionAt);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setRevisionAt($revisionAt)
+    {
+        $this->revisionAt = $revisionAt;
+
+        return $this;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setRevisionAtAccessor($revisionAt)
+    {
+        $this->revisionAt = ConvertUtil::longDate($revisionAt);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDeployAt()
+    {
+        return $this->deployAt;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getDeployAtAccessor()
+    {
+        return ConvertUtil::dateLong($this->deployAt);
+    }
+
+    /**
+     * @param string $deployAt
      *
      * @return Version
      */
-    public function setGuayaquil($guayaquil)
+    public function setDeployAt($deployAt)
     {
-        $this->guayaquil = $guayaquil;
+        $this->deployAt = $deployAt;
+
+        return $this;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setDeployAtAccessor($deployAt)
+    {
+        $this->deployAt = ConvertUtil::longDate($deployAt);
 
         return $this;
     }
