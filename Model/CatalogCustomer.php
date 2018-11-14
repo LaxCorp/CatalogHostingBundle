@@ -14,6 +14,7 @@ class CatalogCustomer
     use Traits\CustomerLoginTrait;
     use Traits\CustomerPasswordTrait;
     use Traits\BackUrlTrait;
+    use Traits\BackUrlNewWindowTrait;
     use Traits\ThemeTrait;
     use Traits\ConfigPathTrait;
     use Traits\BaseCnameTrait;
