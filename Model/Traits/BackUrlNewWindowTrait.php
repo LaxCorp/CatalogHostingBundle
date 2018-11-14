@@ -13,7 +13,7 @@ trait BackUrlNewWindowTrait
     /**
      * @var bool
      *
-     * @Serializer\SerializedName("backUrl_new_window")
+     * @Serializer\SerializedName("backUrlNewWindow")
      * @Serializer\Type("bool")
      */
     private $backUrlNewWindow = false;
