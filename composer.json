@@ -4,6 +4,7 @@
   "type": "symfony-bundle",
   "homepage": "https://github.com/LaxCorp/CatalogHostingBundle",
   "license": "MIT",
+  "minimum-stability": "stable",
   "authors": [
     {
       "name": "Lax Corp",
