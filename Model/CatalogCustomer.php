@@ -19,4 +19,5 @@ class CatalogCustomer
     use Traits\ConfigPathTrait;
     use Traits\BaseCnameTrait;
     use Traits\AllowFromTrait;
+    use Traits\ApplicabilityEnabledTrait;
 }
